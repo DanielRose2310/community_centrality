@@ -8,7 +8,7 @@ np.seterr(all="ignore")
 
 spinner = Halo(text='Loading', spinner='dots')
 
-def comm_centrality(_G,clustering='gn',weight=None):
+def community_centrality(_G,clustering='gn',weight=None):
     spinner.start()
     mm = nx.modularity_matrix(_G,weight='weight')
     comms = clustering_algo(_G,clustering,weight)
