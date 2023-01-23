@@ -10,7 +10,7 @@ spinner = Halo(text='Loading', spinner='dots')
 
 def community_centrality(_G,clustering='gn',weight=None):
     spinner.start()
-    mm = nx.modularity_matrix(_G,weight='weight')
+    mm = nx.modularity_matrix(_G,weight=weight)
     comms = clustering_algo(_G,clustering,weight)
     eigs = np.linalg.eig(mm)
     eig_vals = eigs[0]
